@@ -4,7 +4,8 @@
   "description": "practica de backend para el projecto de la cafeteria",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node index.js"
+    "start": "babel-node index.js",
+    "dev": "nodemon --exec babel-node index.js"
   },
   "keywords": [],
   "author": "Mauro Nicolas Garcia",
