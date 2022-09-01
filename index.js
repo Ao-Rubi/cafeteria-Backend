@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import path from "path";
+import "./src/database"
 
 //instancia de express
 const app = express();
