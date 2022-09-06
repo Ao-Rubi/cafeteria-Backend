@@ -1,12 +1,13 @@
 import { Router } from "express";
+import { borrarProducto, crearProducto, editarProducto, listarProductos, obtenerProducto } from "../controllers/productos.controllers";
 
 const router = Router();
 
 //Crear todas las rutas de los productos
-//dominio+ /apicafe + /
-router.route("/").get( (req, res)=>{
-    res.send("primera peticion get")
-});
+//dominio+ /apicafe + /productos
+router.route("/productos").get(listarProductos).post(crearProducto);
+
+router.route("/productos/:id").get(obtenerProducto).put(editarProducto).delete(borrarProducto)
 
 export default router;
 
