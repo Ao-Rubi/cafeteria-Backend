@@ -58,10 +58,6 @@ export const obtenerProducto = async (req, res)=>{
     }
 }
 
-export const editarProducto = (req, res)=>{
-    res.send("aqui envio un objeto producto para editar")
-}
-
 export const borrarProducto = async (req, res)=>{
     try {
         //Buscar un producto en la coleccion de la base de datos por su id, y luego borrar.
@@ -73,6 +69,22 @@ export const borrarProducto = async (req, res)=>{
         console.log(error)
         res.status(400).json({
             mensaje: "Error al intentar borrar el producto"
+        })
+    }
+}
+
+export const editarProducto = async (req, res)=>{
+    try {
+        //Validacion
+        //Buscar el producto por el id y luego modificar el producto
+        await Producto.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json({
+            mensaje: "Producto editado correctamente"
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({
+            mensaje: "Error al editar el producto"
         })
     }
 }
