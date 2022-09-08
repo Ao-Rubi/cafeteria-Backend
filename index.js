@@ -22,7 +22,6 @@ app.use(cors()); // Permite recibir peticiones remotas
 //los dos middlewares sirven para procesar un objeto json
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-
 //Cargar un acrchivo estatico
 app.use(express.static("./public"))
 
