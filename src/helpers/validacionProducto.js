@@ -31,6 +31,10 @@ const validarProducto = [
         }
     }),
 
+    check("descripcion")
+    .notEmpty().withMessage("Debe de haber una descripcion simple del producto")
+    .isLength({max:300}).withMessage("La descripcion debe ser de menos de 300 caracteres"),
+
     (req, res, next) => {
         resultadosValidacion(req, res, next)
     }

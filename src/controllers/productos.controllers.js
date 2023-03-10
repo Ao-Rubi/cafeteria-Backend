@@ -9,7 +9,8 @@ export const crearProducto = async (req, res)=>{
             nombreProducto: req.body.nombreProducto,
             imagen: req.body.imagen,
             precio: req.body.precio,
-            categoria: req.body.categoria
+            categoria: req.body.categoria,
+            descripcion: req.body.descripcion
         });
 
         //guardar efectivamente en la base de datos
